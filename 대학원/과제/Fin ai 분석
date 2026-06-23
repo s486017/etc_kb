@@ -1,0 +1,248 @@
+# Fin AI Agent
+
+## 1. 소개
+
+- 한줄 소개  
+  : 글로벌 고객 비즈니스 플랫폼인 Intercom이 개발한 AI 우선(AI-First) 고객 서비스 에이전트
+
+- 소개
+  - G2 등 글로벌 평가 기관에서 최상위 AI 에이전트로 인정받고 있음
+  - G2(지투)는 전 세계 소프트웨어와 비즈니스 서비스를 비교하고 리뷰하는 세계 최대 규모의 B2B 소프트웨어 리뷰 플랫폼
+  - 단순한 규칙 기반의 챗봇을 넘어 사람 상담원 수준의 자연스럽고 정확한 문제 해결 능력을 자랑
+
+## 2. 주요 기능 및 특징
+
+- 최신 업데이트
+  - 워크플로우 자동화를 고도화한 Fin 2와 상담원을 보조하는 Fin AI Copilot으로 제품군이 더욱 확장
+
+## 3. 구조 / 주요 기능 / 동작 방식
+
+### 3.1 구조
+
+Fin AI는 단순 LLM을 사용하는 것이 아니라 고객 서비스에 최적화된 3가지 계층 구조로 작동한다.
+
+1. **App Layer 앱 계층**
+   - 웹 채팅, 이메일, SMS, WhatsApp 등 다양한 옴니채널에서 고객과 만나는 접점
+
+2. **AI Layer AI 계층**
+   - 비즈니스의 고유한 지식(Knowledge Base), 기업의 톤앤매너(Tone of Voice), 비즈니스 정책을 이해하고 통제하는 두뇌 역할
+
+3. **Model Layer 모델 계층**
+   - OpenAI의 GPT 등을 포함하여, 안전하고 고도화된 고급 AI 모델들을 유연하게 채택하여 구동
+
+### 3.2 핵심 기능
+
+#### 안전하고 정확한 지식 기반 답변
+
+- 기업의 도움말 센터(Help Center), Notion, Confluence 등과 연동
+- 오직 **확인된 출처를 기반으로만 답변**
+- AI의 고질적인 할루시네이션(환각 현상)을 최소화
+
+#### Fin Tasks / Actions 복잡한 업무 자동화
+
+- 단순 질문 답변(Q&A)을 넘어 외부 시스템과 API로 연동
+- Shopify, Stripe, HubSpot 등과 연결 가능
+- 환불 처리, 계정 정보 수정, 구독 변경 같은 실질적인 비즈니스 업무를 백엔드에서 직접 수행
+
+#### 글로벌 멀티링구얼 지원
+
+- 45개 이상의 언어를 자동으로 인식하고 답변
+- 내부 지식 문서가 영어로만 작성되어 있어도, 한국어로 질문하는 고객에게 번역 단계를 거쳐 자연스러운 한국어 답변 제공
+
+#### 인간 상담원과의 유연한 협업 Handover
+
+- 해결하기 어렵거나 감정적 케어가 필요한 복잡한 문의는 대화 맥락을 유지한 채 사람 상담원에게 자연스럽게 이관
+
+### 3.3 동작 방식 전체 흐름
+
+```mermaid
+graph TD
+  A[질의] --> B[문의 접수 및 분석]
+  B --> C[워크플로우 및 액션 실행]
+  C --> D[답변 제공 또는 상담원 이관]
+```
+
+| 단계 | 설명 |
+|------|------|
+| 문의 접수 및 분석 | 옴니채널 접수 및 LLM 기반 해석 |
+| 의도 판단 | 고객의 의도가 단순 질문인지 특정 작업 요청인지 판단 |
+| 워크플로우 및 액션 실행 | 대화형 경로 제어 및 외부 API 연동 |
+| 백엔드 작업 수행 | 환불, 배송 조회처럼 시스템 데이터가 필요할 때 백엔드 작업 수행 |
+| 답변 제공 / 이관 | 안전한 답변을 제공하거나 실패 시 상담원에게 이관 |
+
+### 3.4 인터콤 Fin AI Diagram
+
+![Intercom Fin AI Diagram](https://images.ctfassets.net/kftzwdyauwt9/3luTzlaMnCy1nVEZDHrvw4/9a820dd5a24df22cd5eaf8f9bb7c3ba8/Intercom_Chart_Dark-crop.png?w=1920&q=80&fm=webp)
+
+### 3.5 워크플로우
+
+![Fin AI Workflow](https://cdn.prod.website-files.com/6649a6fcf4ffc666ae869506/694b9a0ed26268c6eedc84e2_Intercom%20Fin%20AI%20Blog%20Img%202.jpg)
+
+**Fin AI** operates through a three-layer system that processes customer questions and delivers answers. When someone asks a question, the system doesn't just search for keywords; it understands context and intent.
+
+## 4. 강점과 한계
+
+### 4.1 강점
+
+> 기업 내부외의 파편화된 지식을 실시간으로 흡수하여(Knowledge Sources), 답변을 넘어 실제 행정 업무를 처리하고(Actions), 막히면 상담원에게 완벽하게 바톤을 터치하는(Handover) 가장 실용적인 올인원 에이전트
+
+#### 시스템 도입
+
+- 제로 베이스 고속 도입 Native Integration
+  - 별도의 코딩이나 복잡한 SDK 연동 없이 기존 인터콤 헬프 센터의 지식 문서를 연동하는 것만으로 단 며칠 만에 현장에 투입 가능
+
+#### 업무
+
+##### 가상과 현실의 결합 Fin Actions
+
+- 백엔드 업무 직접 수행
+  - 단순한 Q&A 답변에 그치지 않고 Stripe, Shopify, Jira 등 내부 DB 및 외부 API와 유기적으로 결합
+
+- 비즈니스 액션 실행
+  - 고객의 의도를 파악해 배송지 변경, 구독 취소, 환불 승인 등 데이터 변경이 필요한 실질적인 행정 처리를 상담원 없이 자동 수행
+
+##### 가장 매끄러운 상담원 토스 Human Handover
+
+- 맥락 없는 끊김 차단
+  - AI가 해결하지 못하거나 감정적 케어가 필요한 복잡한 문의는 그동안의 대화 맥락을 유지한 채 사람 상담원에게 전달
+
+- 상담원 보조 Copilot으로 전환
+  - 이관된 티켓은 상담원의 Inbox 내에서 Fin AI Copilot으로 변환
+  - 상담원에게 요약문과 모범 답안을 제안하며 실시간으로 업무 지원
+
+#### 운영
+
+##### 다중 지식 소스의 실시간 동기화 Knowledge Sources
+
+- 파편화된 데이터의 통합
+  - 인터콤 자체 도움말 문서뿐만 아니라 외부 웹사이트 URL, PDF, Notion, Confluence 등 기업이 보유한 다양한 지식 소스를 연동
+
+- 실시간 정보 업데이트
+  - 사내 가이드라인이나 웹페이지 내용이 변경되면 Fin이 이를 실시간으로 자동 반영
+  - 수동 업데이트 없이 최신 정보 기반 답변 가능
+  - AI 할루시네이션을 줄이는 데 기여
+
+### 4.2 한계
+
+> Fin은 매우 강력한 도구이지만 1) 사내 문서 관리 프로세스가 부재하거나, 2) 월별 CS 예산이 고정되어 있어야 하거나, 3) 자체 시스템과의 연동을 도와줄 개발 인력이 전혀 없는 환경에서는 도입 후 기대만큼의 효과를 보지 못하거나 운영에 어려움을 겪을 수 있다.
+
+#### 지식 문서 Knowledge Base의 높은 의존도 및 파편화 문제
+
+- 비정형 데이터 학습의 한계
+  - 텍스트 위주의 문서는 잘 이해하지만 이미지 속 글자(OCR), 복잡한 인포그래픽, 구조화되지 않은 긴 가이드라인은 정확히 해석하기 어려움
+  - 결국 사람이 문서를 AI가 읽기 좋은 형태로 다시 가공해야 함
+
+#### 성과 기반 과금 모델 Outcome-based의 비용 예측 불확실성
+
+- 예상치 못한 비용 증가 위험
+  - Fin은 성공적으로 해결된 대화 Resolution 1건당 비용을 부과
+  - 대규모 이벤트, 장애 발생, 반복 질문 등으로 트래픽이 폭발할 경우 월말 청구 비용이 예측 범위를 초과할 수 있음
+
+- 해결 Resolution 기준의 모호성
+  - AI가 답변을 주고 고객이 창을 닫으면 시스템은 이를 해결로 간주할 수 있음
+  - 실제 고객이 만족하지 못해 다시 문의할 경우 중복 과금 가능성 존재
+
+#### 고도화된 커스텀 액션 Fin Actions의 구현 난이도
+
+- API 설계 역량 필수
+  - 단순 Q&A를 넘어 환불, 예약 변경 등 실제 비즈니스 액션을 수행하려면 기업 내부 시스템의 API 연동 필요
+
+- 개발 리소스 소요
+  - 기본 템플릿 외에 자체 개발 솔루션이나 국내 특화 결제·배송 시스템과 연동하려면 내부 개발진의 API 설계와 보안 세팅이 필요
+  - 이 경우 노코드 장점이 약화될 수 있음
+
+## 5. 시사점
+
+### 5.1 Fin AI가 기록물 온톨로지 자동화 연구에 주는 시사점
+
+| 구분 | Fin AI 사례 | 구술채록 온톨로지 자동화에 주는 시사점 |
+|------|------------|---------------------------------------|
+| AI의 역할 | 질문 응답을 넘어 실제 업무 Action 수행 | 단순 엔티티 추출을 넘어 RDF 생성, 엔티티 병합, 관계 검증, SPARQL 생성까지 수행하는 Agent 필요 |
+| 지식 관리 | 다양한 Knowledge Source를 실시간 동기화 | OCR 결과, CU(Content Unit), 전거데이터, 온톨로지 스키마를 통합 관리해야 높은 품질 확보 가능 |
+| 데이터 품질 | AI 성능보다 문서 품질이 더 중요 | LLM 성능보다 OCR 정확도, 문맥 분리, 엔티티 표준화, 관계 정의가 더 중요 |
+| 환각 방지 | 최신 문서를 기반으로 답변 생성 | 온톨로지, 전거데이터, RDF 스키마를 기준으로 추출하여 관계 추론 오류 최소화 |
+| Human Handover | 해결 불가 시 상담원에게 자연스럽게 이관 | 애매한 엔티티, 동명이인, 관계 해석은 전문가 검수 HITL로 이관 |
+| Copilot 개념 | 상담원에게 답변 초안 제공 | 온톨로지 전문가에게 클래스, 관계, 매핑 후보를 추천하는 Ontology Copilot 구현 가능 |
+| 자동화 범위 | 문의 응대에서 업무 처리까지 자동화 | OCR → 엔티티 추출 → 관계 추출 → RDF 생성 → KG 구축까지 자동화 가능 |
+| 시스템 연동 | Stripe, Shopify, Jira 등과 연동 | Neo4j, Fuseki, RDFLib, Protege, 벡터DB 등과 연계 가능 |
+| 운영 방식 | 지속적인 지식 업데이트 | 신규 구술채록 데이터가 들어오면 온톨로지와 KG 자동 업데이트 가능 |
+| 핵심 성공 요인 | AI 모델보다 Knowledge Base 관리 체계 | AI 모델보다 온톨로지 설계 및 데이터 표준화 체계가 중요 |
+| 한계점 | 문서 품질이 낮으면 성능 저하 | OCR 품질 불량, 관계 정의 부족, 전거데이터 부재 시 추출 성능 저하 |
+| 개발 난이도 | 복잡한 Action은 API 연동 필요 | RDF 생성, 엔티티 병합, 온톨로지 정렬 등은 별도 Agent 및 Workflow 필요 |
+| 비용 구조 | 사용량 증가 시 비용 증가 | LLM 호출량 증가에 따른 추출 비용 및 검증 비용 관리 필요 |
+| 미래 방향 | AI-First Customer Service Agent | AI-First Ontology Construction Agent |
+
+### 5.2 핵심 시사점
+
+| 항목 | 내용 |
+|------|------|
+| 현재 수준 | LLM을 이용한 엔티티·관계 추출 자동화 |
+| 목표 수준 | 온톨로지 구축 전 과정을 수행하는 Agent |
+| 핵심 기술 | LLM + Ontology + Knowledge Graph + Agent Workflow |
+| 필수 요소 | Human-in-the-Loop HITL |
+| 차별화 포인트 | 답변형 AI가 아닌 온톨로지 구축 수행형 AI |
+| 논문 연결점 | LLM 기반 기록물의 온톨로지 자동 생성 및 지식그래프 구축 프레임워크의 실현 가능성을 보여주는 대표 사례 |
+
+### 5.3 Fin AI 아키텍처와 연구 아키텍처 비교
+
+| Fin AI | 기록물 온톨로지 자동화 |
+|--------|----------------------|
+| 고객 상담 업무를 수행하는 AI Agent | 온톨로지 구축 업무를 수행하는 AI Agent |
+| Knowledge + Action + Handover | Ontology + Knowledge Graph + HITL |
+| AI-First Customer Service | AI-First Ontology Engineering |
+| 고객 문의 해결 | 기록물 의미 구조화 |
+| 상담원 Copilot | Ontology Copilot |
+| 실시간 업무 처리 | 실시간 지식그래프 구축 및 갱신 |
+
+## 6. 연구 관점에서의 활용 방안
+
+### 6.1 현재 연구 범위
+
+```text
+구술채록
+    ↓
+OCR
+    ↓
+문맥 분리(CU)
+    ↓
+엔티티 추출
+    ↓
+관계 추출
+    ↓
+RDF 생성
+```
+
+### 6.2 향후 확장 방향
+
+```text
+구술채록
+    ↓
+OCR Agent
+    ↓
+Entity Extraction Agent
+    ↓
+Relation Extraction Agent
+    ↓
+Ontology Mapping Agent
+    ↓
+RDF/OWL Generation Agent
+    ↓
+Knowledge Graph Agent
+    ↓
+Quality Evaluation Agent
+    ↓
+Expert Review (HITL)
+```
+
+### 6.3 최종 목표
+
+기존의 엔티티 추출 AI 수준을 넘어, 기록물 분석부터 RDF/OWL 생성, Knowledge Graph 구축, 품질 평가 및 전문가 검수 지원까지 수행하는 **AI-First Ontology Construction Agent**를 구현하는 것이 목표이다.
+
+## 7. 한 줄 시사점
+
+> Fin AI는 단순 챗봇이 아니라 지식 기반 Knowledge, 업무 수행 Action, Human-in-the-Loop Handover 구조를 통해 실제 업무를 자동화하는 대표적인 AI Agent 사례이며, 이는 기록물 온톨로지 자동 생성 및 지식그래프 구축 프레임워크가 지향해야 할 미래 아키텍처에 중요한 참고 모델이 될 수 있다.
+
+## 8. 레퍼런스
+
+- <https://openai.com/ko-KR/index/intercom/>
+- <https://www.saasgenie.ai/blogs/intercom-fin-ai>
